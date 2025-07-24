@@ -78,7 +78,7 @@ const DealCountdown = () => {
         </div>
         <div className='flex justify-center'>
           <Image
-            src='/images/promo.jpg'
+            src='/images/nike-mob-banner.png'
             alt='promotion'
             width={300}
             height={200}
@@ -112,7 +112,7 @@ const DealCountdown = () => {
       </div>
       <div className='flex justify-center'>
         <Image
-          src='/images/promo.jpg'
+          src='/images/nike-mob-banner.png'
           alt='promotion'
           width={300}
           height={200}
