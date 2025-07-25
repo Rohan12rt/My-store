@@ -33,10 +33,16 @@ export async function middleware(request: NextRequest) {
   );
 
   if (isProtected) {
-    const token = await getToken({ 
-      req: request,
-      secret: process.env.NEXTAUTH_SECRET // Add this line
-    });
+    const token = (await getToken({
+    req: request,
+    secret: process.env.NEXTAUTH_SECRET,
+    cookieName: '__Secure-authjs.session-token',
+  })) ||
+  (await getToken({
+    req: request,
+    secret: process.env.NEXTAUTH_SECRET,
+    cookieName: 'next-auth.session-token',
+  }));
 
     if (!token) {
       const signInUrl = new URL("/sign-in", request.url);
